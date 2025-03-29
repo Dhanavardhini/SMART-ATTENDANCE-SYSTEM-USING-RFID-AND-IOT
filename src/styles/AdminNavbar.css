@@ -1,0 +1,86 @@
+/* Sidebar Container */
+.Admin-navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 22%;
+    height: 100vh;
+    background-color: #8258e6;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Admin Title */
+.Admin-quote {
+    font-size: 24px !important;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 30px;
+    padding: 10px;
+    color: #fff;
+}
+
+/* Sidebar Buttons Container */
+.Admin-nav-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+/* Sidebar Buttons */
+.Admin-nav-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    font-size: 18px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-align: left;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Icons - Fixed Width to Align */
+.Admin-icon {
+    font-size: 22px;
+    width: 30px;  /* Ensures all icons take equal space */
+    text-align: left;
+    margin-left: 12px; /* Aligns all icons exactly 12px from left */
+}
+
+/* Text Spacing */
+.Admin-nav-item span {
+    margin-left: 10px;
+}
+
+/* Hover Effect */
+.Admin-nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Logout Button (at Bottom) */
+.Admin-logout {
+    width: 100%;
+    background-color: #ff3b3b;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-top: auto;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.Admin-logout:hover {
+    background-color: #ff1a1a;
+}

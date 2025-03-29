@@ -1,0 +1,95 @@
+.teacherregister-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #E69DB8;
+    padding: 20px;
+}
+
+.teacherregister-card {
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgb(17, 2, 2);
+    background: rgba(255, 255, 255, 0.61);
+    border-radius: 15px;
+}
+
+.teacherregister-title {
+    margin-bottom: 15px !important;
+    color: black !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+}
+
+.teacherregister-form {
+    margin-top: 5px;
+}
+
+.teacherform-group {
+    margin-bottom: 15px !important;
+    text-align: left;
+}
+
+.teacher-input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid rgba(199, 191, 191, 0.747);
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    outline: none;
+}
+
+.teacher-input:focus {
+    border-color: #27548A;
+}
+
+.teacherform-label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.801);
+    margin-bottom: 10px;
+}
+
+.teacher-register-button {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold !important;
+    transition: 0.3s ease-in-out;
+    text-transform: capitalize;
+    background-color: #27548A !important;
+    color: white !important;
+
+}
+
+.teacher-register-button:hover {
+    border: 2px solid #27548A !important ;
+    color: #27548A !important;
+    background-color: white !important;
+
+}
+.teacher-login-text {
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.login-link {
+    color: #27548A;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.login-link:hover {
+    color: #1a3b68;
+    text-decoration: underline;
+}

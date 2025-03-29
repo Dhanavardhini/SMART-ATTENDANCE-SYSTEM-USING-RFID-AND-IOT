@@ -1,0 +1,118 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centering the Login Form */
+.studentlogin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+    background-color: #E69DB8;
+    padding: 20px;
+}
+
+/* Responsive Card */
+.studentlogin-card {
+    padding: 20px;
+    max-width: 370px !important;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgb(17, 2, 2) !important;
+    background: rgba(255, 255, 255, 0.61) !important;
+    border-radius: 15px !important;
+}
+
+/* Title */
+.studentlogin-title {
+    margin-bottom: 15px !important;
+    color: black !important;
+    font-size: 33px !important;
+    font-weight: bold !important;
+}
+
+/* Form */
+.studentlogin-form {
+    margin-top: 5px;
+}
+
+/* Form group (Label + Input) */
+.studentform-group {
+    margin-bottom: 25px !important;
+    text-align: left !important;
+}
+
+.student-input-1,
+.student-input-2 {
+    width: 100% !important;
+    height: 40px !important;
+    padding: 10px !important;
+    border: 1px solid rgba(199, 191, 191, 0.747) !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+    background-color: white !important;
+    color: black !important;
+    outline: none;
+}
+
+/* Apply red outline only when input is focused */
+.student-input-1:focus,
+.student-input-2:focus {
+    border-color: #27548A !important;
+}
+
+/* Prevent autofill background color change */
+.student-input-1:-webkit-autofill,
+.student-input-2:-webkit-autofill {
+    background-color: white !important;
+    color: black !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Labels aligned to the left */
+.studentform-label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.801) !important;
+    margin-bottom: 10px;
+}
+
+/* Login Button */
+.studentlogin-button {
+    background-color: #27548A !important;
+    color: white !important;
+    padding: 10px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+    transition: 0.3s ease-in-out !important;
+    text-transform: capitalize !important;
+}
+
+.studentlogin-button:hover {
+    background-color: white !important;
+    color: #27548A !important;
+    border: 2px solid #27548A !important;
+}
+
+.student-register-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: black;
+}
+
+.register-link {
+    color: #27548A;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}

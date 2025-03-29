@@ -1,0 +1,40 @@
+.Admindashboard-container {
+  padding: 20px;
+  margin-left:24vw; /* Adjust this based on your sidebar width */
+  transition: margin-left 0.3s ease-in-out;
+  width: 65vw;
+}
+
+.Admin-chart-container {
+  margin-top: 20px;
+  width: 100%; /* Adjust to be responsive */
+  max-width: 1200px; /* Keep a max width */
+}
+
+.Admindashboard-card {
+  padding: 10px;
+  text-align: center;
+  gap: 20px;
+}
+
+.Admin-present {
+  background-color: #dff0d8;
+}
+
+.Admin-absent {
+  background-color: #f2dede;
+}
+
+/* Ensure the sidebar does not overlap */
+/* .Admin-navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #4A4A4A;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+} */

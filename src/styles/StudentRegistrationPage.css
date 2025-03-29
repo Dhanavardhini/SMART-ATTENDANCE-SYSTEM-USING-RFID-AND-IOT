@@ -1,0 +1,119 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centering the Registration Form */
+.studentregister-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #E69DB8;
+    padding: 20px;
+}
+
+/* Responsive Card */
+.studentregister-card {
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgb(17, 2, 2);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+}
+
+/* Title */
+.studentregister-title {
+    margin-bottom: 10px !important;
+    color: black;
+    font-size: 30px !important;
+    font-weight: bold;
+}
+
+/* Form */
+.studentregister-form {
+    margin-top: 5px !important;
+}
+
+/* Form group (Label + Input) */
+.studentform-group {
+    margin-bottom: 8px !important;
+    text-align: left !important;
+}
+
+.student-input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid rgba(199, 191, 191, 0.747);
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    outline: none;
+}
+
+/* Apply outline when input is focused */
+.student-input:focus {
+    border-color: #27548A;
+}
+
+/* Prevent autofill background color change */
+.student-input:-webkit-autofill {
+    background-color: white !important;
+    color: black !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Labels aligned to the left */
+.studentform-label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.801);
+    margin-bottom: 10px;
+}
+
+/* Register Button */
+.studentregister-button {
+    background-color: #27548A !important;
+    color: white !important;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    transition: 0.3s ease-in-out;
+    text-transform: capitalize;
+}
+
+.studentregister-button:hover {
+    background-color: white !important;
+    color: #27548A !important;
+    border: 2px solid #27548A !important;
+}
+
+/* Login Text */
+.student-login-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: black;
+}
+
+/* Login Link */
+.login-link {
+    color: #27548A;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-link:hover {
+    color: #173A5E;
+    text-decoration: underline;
+
+}

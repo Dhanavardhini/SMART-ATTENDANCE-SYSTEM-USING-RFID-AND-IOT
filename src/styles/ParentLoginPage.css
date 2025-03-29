@@ -1,0 +1,102 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centering the Login Form */
+.parentlogin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+    background-color: #E69DB8;
+    padding: 20px;
+}
+
+/* Responsive Card */
+.parentlogin-card {
+    padding: 20px;
+    max-width: 370px !important;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgb(17, 2, 2) !important;
+    background: rgba(255, 255, 255, 0.61) !important;
+    border-radius: 15px !important;
+}
+
+/* Title */
+.parentlogin-title {
+    margin-bottom: 15px !important;
+    color: black !important;
+    font-size: 33px !important;
+    font-weight: bold !important;
+}
+
+/* Form */
+.parentlogin-form {
+    margin-top: 5px;
+}
+
+/* Form group (Label + Input) */
+.parentform-group {
+    margin-bottom: 25px !important;
+    text-align: left !important;
+}
+
+.parent-input-1,
+.parent-input-2 {
+    width: 100% !important;
+    height: 40px !important;
+    padding: 10px !important;
+    border: 1px solid rgba(199, 191, 191, 0.747) !important;
+    border-radius: 5px !important;
+    font-size: 15px !important;
+    background-color: white !important;
+    color: black !important;
+    outline: none;
+}
+
+/* Apply red outline only when input is focused */
+.parent-input-1:focus,
+.parent-input-2:focus {
+    border-color: #27548A !important;
+}
+
+/* Prevent autofill background color change */
+.parent-input-1:-webkit-autofill,
+.parent-input-2:-webkit-autofill {
+    background-color: white !important;
+    color: black !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Labels aligned to the left */
+.parentform-label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.801) !important;
+    margin-bottom: 10px;
+}
+
+/* Login Button */
+.parentlogin-button {
+    background-color: #27548A !important;
+    color: white !important;
+    padding: 10px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+    transition: 0.3s ease-in-out !important;
+    text-transform: capitalize !important;
+}
+
+.parentlogin-button:hover {
+    background-color: white !important;
+    color: #27548A !important;
+    border: 2px solid #27548A !important;
+}
