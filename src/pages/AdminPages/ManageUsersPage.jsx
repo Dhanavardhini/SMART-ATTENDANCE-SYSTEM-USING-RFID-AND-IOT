@@ -75,7 +75,7 @@ const ManageUsersPage = () => {
     <div className="manage-users-container">
       <Card className="manage-users-card">
         <h2>Manage Users</h2>
-        <Button startIcon={<Add />} variant="contained" color="primary" onClick={() => handleOpen()}>
+        <Button startIcon={<Add />} variant="contained" className="adbtn" onClick={() => handleOpen()}>
           Add User
         </Button>
 

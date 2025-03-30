@@ -1,0 +1,59 @@
+.send-notifications-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-left: 20vw;
+    /* background-color: #f5f5f5; */
+  }
+  
+  .send-notifications-card {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.856) !important;
+    background: white;
+    border-radius: 10px;
+  }
+  
+  .send-notifications-title {
+    text-align: center !important;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .notifications-table {
+    margin-top: 20px;
+
+  }
+  .notifications-table th {
+    /* background-color: #1976d2; */
+    background-color: #34495e;
+    color: white;
+    font-weight: bold;
+    text-align: center !important;
+
+  }
+  .notifications-table td {
+    text-align: center !important;
+
+  }
+  
+  .send-button {
+    display: block;
+    margin: 20px auto !important;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold !important;
+    background-color: #34495e !important;
+    color: white;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .send-button:hover {
+    border:2px solid #34495e;
+    background-color: white !important;
+    color: #34495e !important;
+  }
+  

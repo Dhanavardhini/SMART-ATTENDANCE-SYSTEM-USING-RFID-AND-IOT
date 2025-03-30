@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Card, CardContent, Typography, Button, Select, MenuItem, FormControl, InputLabel, TextField } from "@mui/material";
 import "../../styles/AttendanceReportsPage.css";
 import AdNav from "./AdNav";
-import { jsPDF } from "jspdf";
-import "jspdf-autotable";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable"; 
+
 
 
 const AttendanceReportsPage = () => {
@@ -48,16 +49,17 @@ const AttendanceReportsPage = () => {
     const tableColumn = ["Date", "Class", "Student", "Status"];
     const tableRows = reportData.map(row => [row.date, row.class, row.student, row.status]);
   
-    // Use autoTable directly from doc
-    doc.autoTable({
+    // ✅ Use autoTable correctly
+    autoTable(doc, {
       head: [tableColumn],
       body: tableRows,
       startY: 25,
     });
   
-    // Save the PDF
+    // ✅ Save the PDF
     doc.save("Attendance_Report.pdf");
   };
+  
   
   
 
@@ -75,7 +77,8 @@ const AttendanceReportsPage = () => {
 
           <FormControl fullWidth className="form-control">
             <InputLabel>Select Class</InputLabel>
-            <Select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)}>
+            <Select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)} placeholder="select class" 
+          label="Select Class">
               {availableClasses.map((cls) => (
                 <MenuItem key={cls} value={cls}>{cls}</MenuItem>
               ))}
@@ -84,7 +87,8 @@ const AttendanceReportsPage = () => {
 
           <FormControl fullWidth className="form-control">
             <InputLabel>Select Student</InputLabel>
-            <Select value={selectedStudent} onChange={(e) => setSelectedStudent(e.target.value)}>
+            <Select value={selectedStudent} onChange={(e) => setSelectedStudent(e.target.value)} placeholder="select Student" 
+          label="Select Student">
               {availableStudents.map((student) => (
                 <MenuItem key={student} value={student}>{student}</MenuItem>
               ))}

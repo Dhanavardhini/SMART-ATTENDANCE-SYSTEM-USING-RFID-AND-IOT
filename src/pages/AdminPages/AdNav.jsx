@@ -21,7 +21,7 @@ const sidebarItems = [
   { icon: <DashboardIcon className="Admin-icon" />, text: "Dashboard", path: "/addashboard" },
   { icon: <GroupIcon className="Admin-icon" />, text: "Manage Users", path: "/manage-users" },
   { icon: <ClassIcon className="Admin-icon" />, text: "Manage Classes", path: "/manage-classes" },
-  { icon: <FactCheckIcon className="Admin-icon" />, text: "Attendance Records", path: "/attendance-records" },
+  { icon: <FactCheckIcon className="Admin-icon" />, text: "Attendance Reports", path: "/attendance-records" },
   { icon: <NotificationsIcon className="Admin-icon" />, text: "Notifications & Alerts", path: "/notifications" },
 ];
 

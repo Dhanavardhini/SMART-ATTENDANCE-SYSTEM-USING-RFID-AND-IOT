@@ -1,0 +1,103 @@
+/* Container */
+.teacher-dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: #f4f6f8; */
+    padding: 20px;
+    margin-left: 20vw !important;
+  }
+  
+  /* Dashboard Card */
+  .teacher-dashboard-card {
+    width: 80%;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.795) !important;
+  }
+  
+  /* Title */
+  .teacher-dashboard-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Teacher Info */
+  .teacher-dashboard-teacher-info {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  /* Assigned Class Info */
+  .teacher-dashboard-class-info {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  /* Search Bar */
+  .teacher-dashboard-search-bar {
+    margin-bottom: 20px;
+  }
+  
+  /* Attendance Table */
+  .teacher-dashboard-attendance-table {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .teacher-dashboard-table th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .teacher-dashboard-table td, 
+  .teacher-dashboard-table th {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Table Row Styling */
+  .teacher-dashboard-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Button Container */
+  .teacher-dashboard-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Logout Button */
+  .teacher-dashboard-button-container button {
+    background-color:#2c3e50;
+    color: white !important;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .teacher-dashboard-button-container button:hover {
+    border: 2px solid #27548A !important;
+    background-color: white !important;
+    color:#27548A !important;
+  }
+  

@@ -1,0 +1,66 @@
+.parent-queries-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* .parent-queries-card {
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+  } */
+  
+  .query-title {
+    font-size: 34px !important;
+    font-weight: bold !important;
+    text-align: center;
+    color: #34495e;
+  }
+  
+  .query-description {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+    color: #666;
+  }
+  
+  .query-input {
+    margin-top: 15px !important;
+  }
+  
+  .parent-queries-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.932) !important;
+
+  }
+  
+  .query-submit {
+    background-color: #2c3e50 !important;
+    color: white !important;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px !important;
+  }
+  
+  .query-submit-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers button horizontally */
+  }
+  
+  .query-submit:hover {
+    background-color: #1a252f !important;
+  }
+  

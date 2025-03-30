@@ -1,0 +1,33 @@
+.parent-nav {
+    height: 60px;
+    background-color: #34495e !important;
+  }
+  
+  .parent-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px !important;
+    flex-wrap: wrap
+  }
+  
+  .parent-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .parent-nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .logout-btn {
+    background-color: #e74c3c !important;
+    color: white !important;
+    padding: 5px 10px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c0392b !important;
+  }
+  

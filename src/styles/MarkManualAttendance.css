@@ -1,0 +1,75 @@
+.mark-manual-attendance-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: #f4f4f4; */
+    margin-left: 20vw;
+    padding: 20px !important;
+  }
+  
+  .mark-manual-attendance-card {
+    width: 80%;
+    max-width: 800px;
+    padding: 2px !important;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.856) !important;
+  }
+  
+  .mark-manual-attendance-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px !important;
+    color: #333 !important;
+  }
+  
+  .search-bar {
+    margin-bottom: 5px !important;
+  }
+  
+  .attendance-table {
+    margin-top: 5px !important;
+  }
+  
+  .attendance-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .attendance-table th,
+  .attendance-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .attendance-table th {
+    background-color:#34495e;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .attendance-select {
+    width: 100%;
+  }
+  
+  .save-button {
+    display: block;
+    margin: 20px auto 0 !important ;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #34495e !important;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-button:hover {
+    background-color: #34495e;
+  }
+  
