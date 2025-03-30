@@ -82,7 +82,7 @@ const ManageUsersPage = () => {
         <TableContainer>
           <Table>
             <TableHead>
-              <TableRow>
+              <TableRow className="manage-user-table">
                 <TableCell>S.No</TableCell>
                 <TableCell>Name</TableCell>
                 <TableCell>Role</TableCell>

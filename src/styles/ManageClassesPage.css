@@ -1,0 +1,56 @@
+.manage-classes-container {
+    padding: 20px;
+    margin-left: 24vw;
+    width: 65vw;
+  }
+  
+  .manage-classes-card {
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .manage-classes-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    margin-bottom: 20px !important;
+  }
+  
+  .assign-button {
+    background-color: #27548A !important;
+    color: white !important;
+    font-weight: bold !important;
+  }
+  .assign-button:hover {
+    background-color:white !important;
+    color: #27548A  !important;
+    border: 2px solid #27548A ;
+  }
+  .assigned-classes {
+    margin-top: 30px;
+  }
+  
+  .assigned-class-card {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-left: 5px solid #27548A;
+  }
+  
+  .remove-button {
+    background-color: #27548A !important;
+    color: white !important;
+    margin-top: 10px !important;
+  }
+  .remove-button:hover {
+    background-color:white !important;
+    color: #27548A  !important;
+    border: 2px solid #27548A ;
+  }
+  

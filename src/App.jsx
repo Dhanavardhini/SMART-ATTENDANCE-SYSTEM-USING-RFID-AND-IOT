@@ -10,6 +10,8 @@ import TeacherRegister from './components/Teacher/TeacherRegister';
 import StudentRegistration from './components/Student/StudentRegistration';
 import ParentRegister from './components/Parent/ParentRegister';
 import ManageUsers from './components/Admin/ManageUsers';
+import ManageClasses from './components/Admin/ManageClasses';
+import AttendanceReports from './components/Admin/AttendanceReports';
 
 
 const routes = [
@@ -27,6 +29,8 @@ const routes = [
 
 // --------------------------
 {path:"/manage-users", element:<ManageUsers />},
+{path:"/manage-classes", element:<ManageClasses/>},
+{path:"/attendance-records", element:<AttendanceReports/>},
 
 
 ];
