@@ -1,4 +1,6 @@
+
 import React, { useState } from "react";
+import axios from "axios";
 import { Button, Card, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "../../styles/StudentRegistrationPage.css";
@@ -18,15 +20,39 @@ export default function StudentRegistrationPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+  
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
-    alert("Student Registered Successfully!");
-    navigate("/studentlogin");
+  
+    try {
+      const response = await axios.post(
+        "http://localhost/student_attendance_iot/controllers/api/user/post/studentregister.php",
+        JSON.stringify({
+          name: formData.fullName, // Changed from fullName to name
+          email: formData.email,
+          password: formData.password,
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+  
+      if (response.data.success) {
+        alert("Student Registered Successfully!");
+        navigate("/student-login");
+      } else {
+        alert(response.data.message || "Registration Failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while registering.");
+    }
   };
+  
 
   return (
     <div className="studentregister-container">
@@ -73,16 +99,27 @@ export default function StudentRegistrationPage() {
           </div>
 
           <div className="studentform-group">
-            <label className="studentform-label">Class</label>
-            <input
-              className="student-input"
-              placeholder="Enter Class (e.g., 10A, 12B)"
-              type="text"
-              name="class"
-              required
-              onChange={handleChange}
-            />
-          </div>
+  <label className="studentform-label">Class</label>
+  <select
+    className="student-input"
+    name="class"
+    required
+    onChange={handleChange}
+    defaultValue=""
+  >
+    <option value="" disabled>Select Class</option>
+    <option value="10A">10A</option>
+    <option value="10B">10B</option>
+    <option value="11A">11A</option>
+    <option value="11B">11B</option>
+    <option value="12A">12A</option>
+    <option value="12B">12B</option>
+  </select>
+</div>
+
+
+
+          
 
           <div className="studentform-group">
             <label className="studentform-label">Password</label>

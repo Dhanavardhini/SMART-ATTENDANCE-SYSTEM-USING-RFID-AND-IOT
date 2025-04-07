@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button, Card, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -8,24 +9,57 @@ export default function ParentRegisterPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    id: "",
     password: "",
     confirmPassword: "",
   });
+
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
+      setError("Passwords do not match!");
       return;
     }
 
-    alert("Parent Registration successful!");
-    navigate("/parentlogin");
+    const requestData = {
+      name: formData.name,
+      email: formData.email,
+    id:formData.id,
+
+      password: formData.password,
+    };
+
+    try {
+      const response = await fetch(
+        "http://localhost/student_attendance_iot/controllers/api/user/post/parentregister.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Parent Registration successful!");
+        navigate("/parent-login");
+      } else {
+        setError(data.message || "Registration failed! Try again.");
+      }
+    } 
+    catch (error) {
+      setError("Network error. Please try again later.");
+    }
   };
 
   return (
@@ -34,6 +68,8 @@ export default function ParentRegisterPage() {
         <Typography variant="h5" className="parentregister-title">
           Parent Registration
         </Typography>
+
+        {error && <Typography color="error">{error}</Typography>}
 
         <form onSubmit={handleSubmit} className="parentregister-form">
           <div className="parentform-group">
@@ -55,6 +91,18 @@ export default function ParentRegisterPage() {
               placeholder="Enter Email"
               type="email"
               name="email"
+              required
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="parentform-group">
+            <label className="parentform-label">Student ID</label>
+            <input
+              className="parent-input"
+              placeholder="Enter Student ID"
+              type="text"
+              name="id"
               required
               onChange={handleChange}
             />

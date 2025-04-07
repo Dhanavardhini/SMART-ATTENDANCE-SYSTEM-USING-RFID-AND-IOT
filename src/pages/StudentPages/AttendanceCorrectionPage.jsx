@@ -9,7 +9,7 @@ const AttendanceCorrectionPage = () => {
     { date: "2025-03-20", status: "Present" },
     { date: "2025-03-19", status: "Absent" },
     { date: "2025-03-18", status: "Present" },
-    { date: "2025-03-17", status: "Late" },
+    { date: "2025-03-17", status: "present" },
     { date: "2025-03-16", status: "Present" },
     { date: "2025-03-15", status: "Absent" },
   ]);
@@ -65,9 +65,9 @@ const AttendanceCorrectionPage = () => {
             {/* Request Correction Form */}
             <div className="correction-form">
               <TextField
-                label="Date (YYYY-MM-DD)"
+                // label="Date (YYYY-MM-DD)"
                 variant="outlined"
-                value={selectedDate}
+                value={selectedDate} type="date"
                 onChange={(e) => setSelectedDate(e.target.value)}
                 className="correction-input"
               />

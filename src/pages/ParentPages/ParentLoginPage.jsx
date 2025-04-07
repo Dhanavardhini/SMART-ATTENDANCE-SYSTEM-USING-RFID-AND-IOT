@@ -10,21 +10,38 @@ export default function ParentLoginPage() {
     password: "",
   });
 
+  const [error, setError] = useState(null);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const validEmail = "parent@gmail.com";
-    const validPassword = "parent123";
+    try {
+      const response = await fetch(
+        "http://localhost/student_attendance_iot/controllers/api/user/get/parentlogin.php",
+        {
+          method: "POST", // Change to POST if required by backend
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-    if (formData.email === validEmail && formData.password === validPassword) {
-      alert("Parent Login successful!");
-      navigate("/parentdashboard");
-    } else {
-      alert("Insert the correct Email and Password");
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Parent Login successful!");
+        localStorage.setItem("parentToken", data.token); // Store token if backend provides one
+        navigate("/attendance-alerts");
+      } else {
+        setError(data.message || "Invalid email or password");
+      }
+    } catch (error) {
+      setError("Network error. Please try again later.");
     }
   };
 
@@ -34,6 +51,8 @@ export default function ParentLoginPage() {
         <Typography variant="h5" className="parentlogin-title">
           Parent Login
         </Typography>
+
+        {error && <Typography color="error">{error}</Typography>}
 
         <form onSubmit={handleSubmit} className="parentlogin-form">
           <div className="parentform-group">
@@ -70,7 +89,6 @@ export default function ParentLoginPage() {
               Register Here
             </span>
           </Typography>
-
         </form>
       </Card>
     </div>

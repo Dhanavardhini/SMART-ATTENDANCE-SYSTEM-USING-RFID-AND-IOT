@@ -18,8 +18,8 @@ const ParentNav = () => {
         <Typography variant="h6" className="parent-title">Parent Portal</Typography>
 
         <div className="parent-nav-links">
-          <Button color="inherit" onClick={() => navigate("/parentdashboard")}>Dashboard</Button>
-          <Button color="inherit" onClick={() => navigate("/attendance-alerts")}>Attendance Alerts</Button>
+          {/* <Button color="inherit" onClick={() => navigate("/parentdashboard")}></Button> */}
+          <Button color="inherit" onClick={() => navigate("/attendance-alerts")}>Dashboard</Button>
           <Button color="inherit" onClick={() => navigate("/communication")}>Contact Admin</Button>
         </div>
 

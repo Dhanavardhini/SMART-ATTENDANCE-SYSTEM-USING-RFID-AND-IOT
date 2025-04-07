@@ -95,7 +95,7 @@ const AttendanceReportsPage = () => {
             </Select>
           </FormControl>
 
-          <div className="button-container">
+          <div className="button-container-1">
             <Button className="generate-button" onClick={handleGenerateReport}>Generate Report</Button>
             <Button className="download-button" onClick={handleDownloadReport}>Download Report</Button>
           </div>

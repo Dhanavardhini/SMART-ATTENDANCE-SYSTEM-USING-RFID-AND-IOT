@@ -25,9 +25,9 @@
     margin-bottom: 15px;
   }
   
-  .button-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
+  .button-container-1 {
+    display: flex !important;
+    justify-content: center !important; /* Center horizontally */
     align-items: center; /* Align vertically (if needed) */
     gap: 15px; /* Space between buttons */
     margin-top: 20px;

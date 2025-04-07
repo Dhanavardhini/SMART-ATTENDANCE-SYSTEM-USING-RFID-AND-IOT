@@ -36,3 +36,106 @@
   .manage-user-table{
     text-align: center !important;
   }
+/* Button container (vertically aligned) */
+.button-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+/* Approve button (Green) */
+.approve-btn {
+  background-color: #4caf50 !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 12px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  width: 100px !important;
+  font-weight: bold !important;
+}
+
+.approve-btn:hover {
+  background-color: #45a049 !important;
+}
+
+
+/* Reject button (Red) */
+.reject-btn {
+  background-color: #f44336 !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 12px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  width: 100px !important;
+  font-weight: bold !important;
+}
+
+.reject-btn:hover {
+  background-color: #d32f2f !important;
+}
+
+/* Block button (Red) */
+.block-btn {
+  background-color: #f44336 !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 12px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  width: 100px !important;
+  font-weight: bold !important;
+}
+
+.block-btn:hover {
+  background-color: #d32f2f !important;
+}
+
+/* Unblock button (Blue) */
+.unblock-btn {
+  background-color: #27548A !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 12px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  width: 100px !important;
+  font-weight: bold !important;
+}
+
+.unblock-btn:hover {
+  background-color: #1d3b6a !important;
+}
+
+/* Delete button (Gray) */
+.delete-btn {
+  background-color: #808080 !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 12px !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  width: 100px !important;
+  font-weight: bold !important;
+}
+
+.delete-btn:hover {
+  background-color: #666666 !important;
+}
+
+.cancelled-btn {
+  background-color: #d9534f !important; /* Red color for cancelled status */
+  color: white !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 4px !important;
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+}
+
+.cancelled-btn:disabled {
+  background-color: #d9534f !important;
+  color: white !important;
+}

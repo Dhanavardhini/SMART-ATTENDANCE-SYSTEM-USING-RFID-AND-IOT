@@ -9,10 +9,10 @@ import TeacherNav from "./Teachernav";
 const MarkManualAttendancePage = () => {
   // Mock student list (Replace with actual student data from API)
   const [students, setStudents] = useState([
-    { id: 1, name: "Alice Green", attendance: "Present", status: "On Time" },
+    { id: 1, name: "Alice Green", attendance: "Present", status: "Present" },
     { id: 2, name: "David Lee", attendance: "Absent", status: "Absent" },
-    { id: 3, name: "Sophia Kim", attendance: "Present", status: "On Time" },
-    { id: 4, name: "John Doe", attendance: "Late", status: "Late" },
+    { id: 3, name: "Sophia Kim", attendance: "Present", status: "Present" },
+    { id: 4, name: "John Doe", attendance: "Present", status: "Absent" },
   ]);
 
   // Search filter
@@ -84,7 +84,6 @@ const MarkManualAttendancePage = () => {
                           >
                             <MenuItem value="Present">Present</MenuItem>
                             <MenuItem value="Absent">Absent</MenuItem>
-                            <MenuItem value="Late">Late</MenuItem>
                           </Select>
                         </TableCell>
                         <TableCell>{student.status}</TableCell> {/* Displaying Status */}

@@ -1,3 +1,163 @@
+// import React, { useState } from "react";
+// import {
+//   Button,
+//   Card,
+//   Table,
+//   TableBody,
+//   TableCell,
+//   TableContainer,
+//   TableHead,
+//   TableRow,
+//   Dialog,
+//   DialogActions,
+//   DialogContent,
+//   DialogTitle,
+//   TextField,
+//   Select,
+//   MenuItem,
+// } from "@mui/material";
+// import { Edit, Delete, Add } from "@mui/icons-material";
+// import "../../styles/ManageUsersPage.css";
+// import AdNav from "./AdNav";
+
+// const ManageUsersPage = () => {
+//   // Sample user data
+//   const [users, setUsers] = useState([
+//     { id: 1, name: "Alice Green", role: "Admin", email: "alice@example.com", status: "Pending" },
+//     { id: 2, name: "David Lee", role: "User", email: "david@example.com", status: "Pending" },
+//     { id: 3, name: "Sophia Kim", role: "Moderator", email: "sophia@example.com", status: "Pending" },
+//     { id: 4, name: "John Doe", role: "User", email: "john@example.com", status: "Pending" },
+//   ]);
+
+//   const handleStatusChange = (id) => {
+//     setUsers((prevUsers) =>
+//       prevUsers.map((user) =>
+//         user.id === id
+//           ? {
+//               ...user,
+//               status:
+//                 user.status === "Pending"
+//                   ? "Unblocked"
+//                   : user.status === "Unblocked"
+//                   ? "Blocked"
+//                   : "Unblocked",
+//             }
+//           : user
+//       )
+//     );
+//   };
+
+
+
+//   return (
+//     <>
+//     <AdNav/>
+//     <div className="manage-users-container">
+//       <Card className="manage-users-card">
+//         <h2>Manage Users</h2>
+//         {/* <Button startIcon={<Add />} variant="contained" className="adbtn" onClick={() => handleOpen()}>
+//           Add User
+//         </Button> */}
+//  <TableContainer>
+//       <Table>
+//         <TableHead className="manage-user-table">
+//           <TableRow>
+//             <TableCell sx={{ textAlign: "center" }}>S.No</TableCell>
+//             <TableCell sx={{ textAlign: "center" }}>Name</TableCell>
+//             <TableCell sx={{ textAlign: "center" }}>Role</TableCell>
+//             <TableCell sx={{ textAlign: "center" }}>Email</TableCell>
+//             <TableCell sx={{ textAlign: "center" }}>Actions</TableCell>
+//           </TableRow>
+//         </TableHead>
+//         <TableBody>
+//           {users.map((user) => (
+//             <TableRow key={user.id}>
+//               <TableCell sx={{ textAlign: "center" }}>{user.id}</TableCell>
+//               <TableCell sx={{ textAlign: "center" }}>{user.name}</TableCell>
+//               <TableCell sx={{ textAlign: "center" }}>{user.role}</TableCell>
+//               <TableCell sx={{ textAlign: "center" }}>{user.email}</TableCell>
+//               {/* <TableCell sx={{ textAlign: "center" }}>
+//                 <div className="button-container">
+//                   {user.status === "Pending" ? (
+//                     <>
+//                       <Button
+//                         onClick={() => handleStatusChange(user.id)}
+//                         className="approve-btn"
+//                       >
+//                         Approve
+//                       </Button>
+//                       <Button
+//                         onClick={() => handleStatusChange(user.id)}
+//                         className="reject-btn"
+//                       >
+//                         Reject
+//                       </Button>
+//                     </>
+//                   ) : (
+//                     <>
+//                       <Button
+//                         onClick={() => handleStatusChange(user.id)}
+//                         className={user.status === "Unblocked" ? "block-btn" : "unblock-btn"}
+//                       >
+//                         {user.status === "Unblocked" ? "Block" : "Unblock"}
+//                       </Button>
+//                       <Button className="delete-btn">Delete</Button>
+//                     </>
+//                   )}
+//                 </div>
+//               </TableCell> */}
+
+// <TableCell sx={{ textAlign: "center" }}>
+//   <div className="button-container">
+//     {user.status === "Pending" ? (
+//       <>
+//         {!user.rejected && ( // If not rejected, show Approve button
+//           <Button
+//             onClick={() => handleStatusChange(user.id, "Unblocked")}
+//             className="approve-btn"
+//           >
+//             Approve
+//           </Button>
+//         )}
+//         <Button
+//           onClick={() => handleStatusChange(user.id, "Blocked", true)}
+//           className="reject-btn"
+//         >
+//           Reject
+//         </Button>
+//       </>
+//     ) : (
+//       <>
+//         <Button
+//           onClick={() => handleStatusChange(user.id, user.status === "Unblocked" ? "Blocked" : "Unblocked")}
+//           className={user.status === "Unblocked" ? "block-btn" : "unblock-btn"}
+//         >
+//           {user.status === "Unblocked" ? "Block" : "Unblock"}
+//         </Button>
+//         <Button className="delete-btn">Delete</Button>
+//       </>
+//     )}
+//   </div>
+// </TableCell>
+
+//             </TableRow>
+//           ))}
+//         </TableBody>
+//       </Table>
+//     </TableContainer>
+//       </Card>
+
+     
+//     </div>
+
+//     </>
+//   );
+// };
+
+// export default ManageUsersPage;
+
+
+
 import React, { useState } from "react";
 import {
   Button,
@@ -8,153 +168,99 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  TextField,
-  Select,
-  MenuItem,
 } from "@mui/material";
-import { Edit, Delete, Add } from "@mui/icons-material";
 import "../../styles/ManageUsersPage.css";
 import AdNav from "./AdNav";
 
 const ManageUsersPage = () => {
   // Sample user data
   const [users, setUsers] = useState([
-    { id: 1, name: "John Doe", role: "Student", email: "john@student.com" },
-    { id: 2, name: "Jane Smith", role: "Teacher", email: "jane@teacher.com" },
-    { id: 3, name: "Michael Brown", role: "Parent", email: "michael@parent.com" },
+    { id: 1, name: "Alice Green", role: "Admin", email: "alice@example.com", status: "Pending" },
+    { id: 2, name: "David Lee", role: "User", email: "david@example.com", status: "Pending" },
+    { id: 3, name: "Sophia Kim", role: "Moderator", email: "sophia@example.com", status: "Pending" },
+    { id: 4, name: "John Doe", role: "User", email: "john@example.com", status: "Pending" },
   ]);
 
-  // State for Add/Edit Dialog
-  const [open, setOpen] = useState(false);
-  const [editMode, setEditMode] = useState(false);
-  const [currentUser, setCurrentUser] = useState({ id: "", name: "", role: "Student", email: "" });
-
-  // Open dialog for Add or Edit
-  const handleOpen = (user = { id: "", name: "", role: "Student", email: "" }) => {
-    setCurrentUser(user);
-    setEditMode(!!user.id);
-    setOpen(true);
+  const handleStatusChange = (id, newStatus, isRejected = false) => {
+    setUsers((prevUsers) =>
+      prevUsers.map((user) =>
+        user.id === id
+          ? {
+              ...user,
+              status: isRejected ? "Cancelled" : newStatus,
+            }
+          : user
+      )
+    );
   };
-
-  // Close dialog
-  const handleClose = () => {
-    setOpen(false);
-    setCurrentUser({ id: "", name: "", role: "Student", email: "" });
-  };
-
-  // Handle form change
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCurrentUser((prev) => ({ ...prev, [name]: value }));
-  };
-  
-
-  // Add or Update User
-  const handleSave = () => {
-    if (editMode) {
-      setUsers(users.map((user) => (user.id === currentUser.id ? currentUser : user)));
-    } else {
-      setUsers([...users, { ...currentUser, id: users.length + 1 }]);
-    }
-    handleClose();
-  };
-
-  // Delete User
-  const handleDelete = (id) => {
-    setUsers(users.filter((user) => user.id !== id));
-  };
-  
 
   return (
     <>
-    <AdNav/>
-    <div className="manage-users-container">
-      <Card className="manage-users-card">
-        <h2>Manage Users</h2>
-        <Button startIcon={<Add />} variant="contained" className="adbtn" onClick={() => handleOpen()}>
-          Add User
-        </Button>
-
-        <TableContainer>
-          <Table>
-            <TableHead>
-              <TableRow className="manage-user-table">
-                <TableCell>S.No</TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell>Role</TableCell>
-                <TableCell>Email</TableCell>
-                <TableCell>Actions</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {users.map((user) => (
-                <TableRow key={user.id}>
-<TableCell>{user.id}</TableCell>
-                  <TableCell>{user.name}</TableCell>
-                  <TableCell>{user.role}</TableCell>
-                  <TableCell>{user.email}</TableCell>
-                  <TableCell>
-                    <Button onClick={() => handleOpen(user)} color="primary">
-                      <Edit />
-                    </Button>
-                    <Button onClick={() => handleDelete(user.id)} color="secondary">
-                      <Delete />
-                    </Button>
-                  </TableCell>
+      <AdNav />
+      <div className="manage-users-container">
+        <Card className="manage-users-card">
+          <h2>Manage Users</h2>
+          <TableContainer>
+            <Table>
+              <TableHead className="manage-user-table">
+                <TableRow>
+                  <TableCell sx={{ textAlign: "center" }}>S.No</TableCell>
+                  <TableCell sx={{ textAlign: "center" }}>Name</TableCell>
+                  {/* <TableCell sx={{ textAlign: "center" }}>Role</TableCell> */}
+                  <TableCell sx={{ textAlign: "center" }}>Email</TableCell>
+                  <TableCell sx={{ textAlign: "center" }}>Actions</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </Card>
-
-      {/* Add/Edit Dialog */}
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>{editMode ? "Edit User" : "Add User"}</DialogTitle>
-        <DialogContent>
-          <TextField
-            fullWidth
-            margin="dense"
-            label="Name"
-            name="name"
-            value={currentUser.name}
-            onChange={handleChange}
-          />
-          <TextField
-            fullWidth
-            margin="dense"
-            label="Email"
-            name="email"
-            value={currentUser.email}
-            onChange={handleChange}
-          />
-          <Select
-            fullWidth
-            margin="dense"
-            name="role"
-            value={currentUser.role}
-            onChange={handleChange}
-          >
-            <MenuItem value="Student">Student</MenuItem>
-            <MenuItem value="Teacher">Teacher</MenuItem>
-            <MenuItem value="Parent">Parent</MenuItem>
-          </Select>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="error">
-            Cancel
-          </Button>
-          <Button onClick={handleSave} color="primary">
-            {editMode ? "Update" : "Add"}
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-
+              </TableHead>
+              <TableBody>
+                {users.map((user) => (
+                  <TableRow key={user.id}>
+                    <TableCell sx={{ textAlign: "center" }}>{user.id}</TableCell>
+                    <TableCell sx={{ textAlign: "center" }}>{user.name}</TableCell>
+                    {/* <TableCell sx={{ textAlign: "center" }}>{user.role}</TableCell> */}
+                    <TableCell sx={{ textAlign: "center" }}>{user.email}</TableCell>
+                    <TableCell sx={{ textAlign: "center" }}>
+                      <div className="button-container">
+                        {user.status === "Pending" ? (
+                          <>
+                            <Button
+                              onClick={() => handleStatusChange(user.id, "Unblocked")}
+                              className="approve-btn"
+                            >
+                              Approve
+                            </Button>
+                            <Button
+                              onClick={() => handleStatusChange(user.id, "Cancelled", true)}
+                              className="reject-btn"
+                            >
+                              Reject
+                            </Button>
+                          </>
+                        ) : user.status === "Cancelled" ? (
+                          <Button className="cancelled-btn" disabled>
+                            Cancelled
+                          </Button>
+                        ) : (
+                          <>
+                            <Button
+                              onClick={() =>
+                                handleStatusChange(user.id, user.status === "Unblocked" ? "Blocked" : "Unblocked")
+                              }
+                              className={user.status === "Unblocked" ? "block-btn" : "unblock-btn"}
+                            >
+                              {user.status === "Unblocked" ? "Block" : "Unblock"}
+                            </Button>
+                            <Button className="delete-btn">Delete</Button>
+                          </>
+                        )}
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Card>
+      </div>
     </>
   );
 };

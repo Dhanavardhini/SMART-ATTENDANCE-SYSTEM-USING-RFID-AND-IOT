@@ -1,3 +1,6 @@
+
+
+
 import React, { useState } from "react";
 import { Button, Card, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -10,23 +13,41 @@ export default function TeacherLoginPage() {
     password: "",
   });
 
+  const [error, setError] = useState(null);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const validEmail = "teacher@gmail.com";
-    const validPassword = "teacher123";
-
-    if (formData.email === validEmail && formData.password === validPassword) {
-      alert("Teacher Login successful!");
-      navigate("/teacherdashboard");
-    } else {
-      alert("Insert the correct Email and Password");
+  
+    try {
+      const response = await fetch(
+        "http://localhost/student_attendance_iot/controllers/api/user/get/teacherlogin.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData), // Sends the email and password data
+        }
+      );
+  
+      const result = await response.json();
+  
+      if (response.ok) {
+        alert("Login successful! Redirecting to your dashboard...");
+        navigate("/mark-attendance"); // Navigate to teacher dashboard
+      } else {
+        setError(result.error || "Invalid email or password. Please check your credentials.");
+      }
+    } catch (error) {
+      setError("Failed to connect to the server. Please try again later.");
     }
   };
+  
+
 
   return (
     <div className="teacherlogin-container">
@@ -35,9 +56,11 @@ export default function TeacherLoginPage() {
           Teacher Login
         </Typography>
 
+        {error && <Typography color="error">{error}</Typography>}
+
         <form onSubmit={handleSubmit} className="teacherlogin-form">
           <div className="teacherform-group">
-            <label className="teacherform-label">Email Id</label>
+            <label className="teacherform-label">Email</label>
             <input
               className="teacher-input-1"
               placeholder="Enter Email"
@@ -64,14 +87,15 @@ export default function TeacherLoginPage() {
             Login
           </Button>
 
-          {/* Register Here text */}
           <Typography variant="body2" className="teacher-register-text">
             Don't have an account?{" "}
-            <span className="register-link" onClick={() => navigate("/teacherregister")}>
+            <span
+              className="register-link"
+              onClick={() => navigate("/teacherregister")}
+            >
               Register Here
             </span>
           </Typography>
-
         </form>
       </Card>
     </div>

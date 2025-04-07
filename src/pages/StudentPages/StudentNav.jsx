@@ -17,8 +17,8 @@ export default function StudentNav() {
 
   const menuItems = [
     { icon: <DashboardIcon className="student-icon" />, text: "Dashboard", path: "/studentdashboard" },
-    { icon: <HistoryIcon className="student-icon" />, text: "Attendance History", path: "/attendance-history" },
-    { icon: <NotificationsActiveIcon className="student-icon" />, text: "Notifications", path: "/student-notifications" },
+    // { icon: <HistoryIcon className="student-icon" />, text: "Attendance History", path: "/attendance-history" },
+    // { icon: <NotificationsActiveIcon className="student-icon" />, text: "Notifications", path: "/student-notifications" },
     { icon: <RequestPageIcon className="student-icon" />, text: "Correction Requests", path: "/correction-requests" },
   ];
 

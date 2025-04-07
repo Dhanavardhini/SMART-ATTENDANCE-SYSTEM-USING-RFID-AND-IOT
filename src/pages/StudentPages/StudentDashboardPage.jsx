@@ -13,7 +13,7 @@ const StudentDashboardPage = () => {
     { date: "2025-03-20", status: "Present" },
     { date: "2025-03-19", status: "Absent" },
     { date: "2025-03-18", status: "Present" },
-    { date: "2025-03-17", status: "Late" },
+    { date: "2025-03-17", status: "present" },
   ]);
 
   const totalClasses = attendanceRecords.length;
@@ -21,12 +21,12 @@ const StudentDashboardPage = () => {
   const attendancePercentage = ((presentDays / totalClasses) * 100).toFixed(2);
 
   const chartOptions = {
-    labels: ["Present", "Absent", "Late"],
+    labels: ["Present", "Absent"],
   };
   const chartSeries = [
     presentDays,
     attendanceRecords.filter((r) => r.status === "Absent").length,
-    attendanceRecords.filter((r) => r.status === "Late").length,
+    // attendanceRecords.filter((r) => r.status === "Late").length,
   ];
   
   const navigate = useNavigate();

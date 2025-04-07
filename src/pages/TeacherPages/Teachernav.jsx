@@ -15,9 +15,10 @@ export default function TeacherNav() {
   const navigate = useNavigate();
 
   const sidebarItems = [
-    { icon: <DashboardIcon className="teacher-icon" />, text: "Teacher Dashboard", path: "/teacherdashboard" },
-    { icon: <GroupIcon className="teacher-icon" />, text: "Class Attendance", path: "/view-attendance" },
+    // { icon: <DashboardIcon className="teacher-icon" />, text: "Teacher Dashboard", path: "/teacherdashboard" },
     { icon: <FactCheckIcon className="teacher-icon" />, text: "Manual Attendance", path: "/mark-attendance" },
+    { icon: <GroupIcon className="teacher-icon" />, text: "Class Attendance", path: "/view-attendance" },
+
     { icon: <NotificationsIcon className="teacher-icon" />, text: "Notify Students", path: "/send-notifications" },
     { icon: <FactCheckIcon className="teacher-icon" />, text: "Attendance Reports", path: "/generate-reports" },
   ];

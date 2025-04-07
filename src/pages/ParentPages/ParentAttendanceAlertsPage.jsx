@@ -11,6 +11,7 @@ const ParentAttendanceAlertsPage = () => {
     { date: "2025-03-18", status: "Present" },
     { date: "2025-03-17", status: "Late" },
     { date: "2025-03-16", status: "Present" },
+    { date: "2025-03-16", status: "Present" },
     { date: "2025-03-15", status: "Absent" },
   ]);
 

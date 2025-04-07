@@ -12,7 +12,7 @@ const Notifications = () => {
     "Sophia Kim": 60
   });
 
-  const [threshold, setThreshold] = useState(null); // ✅ Default to None
+  const [threshold, setThreshold] = useState(null);z // ✅ Default to None
   const [alertMessage, setAlertMessage] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
 

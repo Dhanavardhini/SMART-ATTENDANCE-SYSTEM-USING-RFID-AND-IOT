@@ -15,6 +15,7 @@ const SendNotificationsPage = () => {
     { id: 4, name: "John Doe", attendance: 80, notify: false },
   ]);
 
+
   // Function to toggle notification selection
   const handleCheckboxChange = (id) => {
     setStudents((prevStudents) =>
@@ -23,6 +24,24 @@ const SendNotificationsPage = () => {
       )
     );
   };
+
+  const [students1, setStudent] = useState([
+    { id: 1, name: "Alice Green", queries:  "Alice's attendance is critically low. Immediate action required!" },
+    { id: 2, name: "David Lee", queries:  "Alice's attendance is critically low. Immediate action required!", },
+    { id: 3, name: "Sophia Kim", queries:  "Alice's attendance is critically low. Immediate action required!", },
+    { id: 4, name: "John Doe", queries: "Alice's attendance is critically low. Immediate action required!",},
+  ]);
+
+  
+  // Function to toggle notification selection
+  // const handleCheckboxChange1 = (id) => {
+  //   setStudent((prevStudents) =>
+  //     prevStudents.map((students) =>
+  //       students.id === id ? { ...students, notify: !students.notify } : students
+  //     )
+  //   );
+  // };
+
 
   // Function to send notifications
   const handleSendNotifications = () => {
@@ -90,6 +109,80 @@ const SendNotificationsPage = () => {
           </CardContent>
         </Card>
       </div>
+
+      {/* ------------------------ */}
+    
+      <div className="send-notifications-container">
+        <Card className="send-notifications-card-1">
+          <CardContent>
+            <Typography variant="h4" className="send-notifications-title">
+              Parents Queries
+            </Typography>
+
+            {/* Attendance Table */}
+            <TableContainer component={Paper} className="notifications-table">
+              <Table>
+              <TableHead>
+                    <TableRow>
+                        <TableCell>S.No</TableCell>
+                        <TableCell>Parent Name</TableCell>
+                        <TableCell>Queries</TableCell>
+                    </TableRow>
+                    </TableHead>
+
+                    <TableBody>
+  {students1.map((student) => (
+    <TableRow key={student.id}>
+      <TableCell>{student.id}</TableCell>
+      <TableCell>{student.name}</TableCell>
+      <TableCell>{student.queries}</TableCell>
+    </TableRow>
+  ))}
+</TableBody>
+
+              </Table>
+            </TableContainer>
+
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* ----------------------------- */}
+
+      <div className="send-notifications-container">
+        <Card className="send-notifications-card-1">
+          <CardContent>
+            <Typography variant="h4" className="send-notifications-title">
+              Student Queries
+            </Typography>
+
+            {/* Attendance Table */}
+            <TableContainer component={Paper} className="notifications-table">
+              <Table>
+              <TableHead>
+                    <TableRow>
+                        <TableCell>S.No</TableCell>
+                        <TableCell>student Name</TableCell>
+                        <TableCell>Queries</TableCell>
+                    </TableRow>
+                    </TableHead>
+
+                    <TableBody>
+  {students1.map((student) => (
+    <TableRow key={student.id}>
+      <TableCell>{student.id}</TableCell>
+      <TableCell>{student.name}</TableCell>
+      <TableCell>{student.queries}</TableCell>
+    </TableRow>
+  ))}
+</TableBody>
+
+              </Table>
+            </TableContainer>
+
+          </CardContent>
+        </Card>
+      </div>  
     </>
   );
 };

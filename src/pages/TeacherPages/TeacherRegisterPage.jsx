@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button, Card, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -13,14 +14,47 @@ export default function TeacherRegisterPage() {
     password: "",
   });
 
+  const [error, setError] = useState(null);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Teacher Registration Successful!");
-    navigate("/teacherlogin"); // Redirect back to login page
+    setError(null);
+
+    const requestData = {
+      name: formData.fullName,
+      email: formData.email,
+      subject: formData.subject,
+      experience: formData.experience,
+      password: formData.password,
+    };
+
+    try {
+      const response = await fetch(
+        "http://localhost/student_attendance_iot/controllers/api/user/post/teacherregister.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestData),
+        }
+      );
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert(result.message);
+        navigate("/teacher-login");
+      } else {
+        setError(result.error || "Registration failed. Please try again.");
+      }
+    } catch (error) {
+      setError("Failed to connect to the server.");
+    }
   };
 
   return (
@@ -29,6 +63,8 @@ export default function TeacherRegisterPage() {
         <Typography variant="h5" className="teacherregister-title">
           Teacher Registration
         </Typography>
+
+        {error && <Typography color="error">{error}</Typography>}
 
         <form onSubmit={handleSubmit} className="teacherregister-form">
           <div className="teacherform-group">
@@ -67,17 +103,37 @@ export default function TeacherRegisterPage() {
             />
           </div>
 
-          <div className="teacherform-group">
-            <label className="teacherform-label">Years of Experience</label>
+          {/* <div className="teacherform-group">
+            <label className="teacherform-label">Enter Class Name</label>
             <input
               className="teacher-input"
-              placeholder="Enter Experience (e.g., 5 years)"
+              placeholder="Enter class"
               type="text"
               name="experience"
               required
               onChange={handleChange}
             />
-          </div>
+          </div> */}
+
+<div className="studentform-group">
+  <label className="studentform-label">Class</label>
+  <select
+    className="student-input"
+    name="class"
+    required
+    onChange={handleChange}
+    defaultValue=""
+  >
+    <option value="" disabled>Select Class</option>
+    <option value="10A">10A</option>
+    <option value="10B">10B</option>
+    <option value="11A">11A</option>
+    <option value="11B">11B</option>
+    <option value="12A">12A</option>
+    <option value="12B">12B</option>
+  </select>
+</div>
+
 
           <div className="teacherform-group">
             <label className="teacherform-label">Password</label>
@@ -94,14 +150,16 @@ export default function TeacherRegisterPage() {
           <Button type="submit" className="teacher-register-button" fullWidth>
             Register
           </Button>
+
           <Typography variant="body2" className="teacher-login-text">
-            Registered already?{" "}
-            <span className="login-link" onClick={() => navigate("/teacher-login")}>
-                Access your account
+            Already registered?{" "}
+            <span
+              className="login-link"
+              onClick={() => navigate("/teacher-login")}
+            >
+              Access your account
             </span>
-            </Typography>
-
-
+          </Typography>
         </form>
       </Card>
     </div>

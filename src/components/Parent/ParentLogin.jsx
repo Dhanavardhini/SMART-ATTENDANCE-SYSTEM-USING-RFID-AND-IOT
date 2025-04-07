@@ -10,3 +10,4 @@ function ParentLogin() {
 }
 
 export default ParentLogin
+// http://localhost/student_attendance_iot/controllers/api/user/get/studentlogin.php
